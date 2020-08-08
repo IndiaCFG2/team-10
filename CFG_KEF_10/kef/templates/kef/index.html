@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {% block style %}
+    {% endblock style %}
+</head>
+
+<body>
+    {% block content %}
+    <div class="container-fluid" style="background: Aqua">
+        <table class="table table-striped table-sm" id="my_books">
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Book name</th>
+                    <th>Author name</th>
+                    <th>About</th>
+                    <th>employee</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{book.book_id}}</td>
+                <td>{{book.book_name}}</td>
+                <td>{{book.author_name}}</td>
+                <td>{{book.about}}</td>
+                <td>{{book.employee}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    {% endblock content %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
